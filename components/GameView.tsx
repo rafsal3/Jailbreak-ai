@@ -30,8 +30,8 @@ export const GameView: React.FC<GameViewProps> = ({
   const { theme } = level;
 
   return (
-    <div className={`animate-fadeIn min-h-screen flex flex-col p-4 md:p-8 transition-colors duration-500 ${theme.bg} ${theme.text} ${theme.font}`}>
-      <div className={`relative flex-grow flex flex-col border-2 rounded-lg shadow-2xl p-4 md:p-6 ${theme.borderColor} bg-black/20`}>
+    <div className={`animate-fadeIn h-screen flex flex-col p-4 md:p-8 transition-colors duration-500 ${theme.bg} ${theme.text} ${theme.font}`}>
+      <div className={`relative flex-grow flex flex-col overflow-hidden border-2 rounded-lg shadow-2xl p-4 md:p-6 ${theme.borderColor} bg-black/20`}>
         
         <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
 
@@ -50,7 +50,7 @@ export const GameView: React.FC<GameViewProps> = ({
           </button>
         </header>
 
-        <div className="flex-grow overflow-y-auto p-2" id="message-container">
+        <div className="flex-grow min-h-0 overflow-y-auto p-2" id="message-container">
            <ChatInterface messages={messages} isLoading={isLoading} theme={theme} />
         </div>
 
